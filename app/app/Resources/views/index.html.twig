@@ -2,9 +2,12 @@
 
 {% block content %}
     <h1 class="cover-heading">
-        Welcome
+        Prayer Requests
     </h1>
-    <p class="lead">
-        Welcome to the site
-    </p>
+    <p>&nbsp;</p>
+    <ul class="lead">
+        {% for prayer in prayers %}
+            <li>{{prayer}}</li>
+        {% endfor %}
+    </ul>
 {% endblock %}
