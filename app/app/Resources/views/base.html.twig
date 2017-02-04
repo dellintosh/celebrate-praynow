@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{% block title '' %} - My Symfony Application</title>
+    <title>{% block title 'Pray' %} - Celebrate Church</title>
+    <link rel="shortcut icon" href="{{ asset('images/logo.png') }}">
 
-    <link href="{{ asset('bundles/app/components/uikit/css/uikit.almost-flat.min.css') }}" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="{{ asset('bundles/app/components/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" />
 
-    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-    </script>
 </head>
 <body>
-{% block content %}{% endblock %}
+    <div class="site-wrapper">
+        <div class="site-wrapper-inner">
+            <div class="cover-container">
+                <div class="inner cover">
 
-<script src="{{ asset('bundles/app/components/jquery/dist/jquery.min.js') }}"></script>
-<script src="{{ asset('bundles/app/components/uikit/js/uikit.min.js') }}"></script>
+                    {% block content %}{% endblock %}
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.6.0/metisMenu.min.js" integrity="sha384-sNvR6071PYuJAPjHopDK71lziPPNMKpCMovi5m3626bIK99mX0B8inWX6wngq+9j" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js" integrity="sha256-EPrkNjGEmCWyazb3A/Epj+W7Qm2pB9vnfXw+X6LImPM=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.e20.co/js/jquery.slimscroll.min.js" integrity="sha384-vZl7889PwCFXkHkul5y3E7hbTKdj5G1mpwXEc2qIU2hsr34+aOM2eSbVSs9AqFJS" crossorigin="anonymous"></script>
 </body>
 </html>
