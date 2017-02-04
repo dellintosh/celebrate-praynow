@@ -1,8 +1,8 @@
-FROM python:3
+FROM dellintosh/symfony
+MAINTAINER Justus Luthy <justus@luthyenterprises.com>
 
-COPY app /app
-WORKDIR /app
+COPY app .
 
-RUN pip install -r requirements.txt
-ENTRYPOINT ["python"]
-CMD ["app.py"]
+EXPOSE 80
+
+ENTRYPOINT ["/init"]
