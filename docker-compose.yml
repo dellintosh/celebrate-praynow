@@ -7,6 +7,20 @@ services:
       - ./app:/var/www/symfony
     ports:
       - "80:80"
+    links:
+      - mysql
     environment:
       SYMFONY_DEBUG: 1
       SYMFONY_ENV: dev
+      LOG_LEVEL: debug
+      DATABASE_DSN: "mysql://root:ThisIsNotASecurePassword123@mysql/prayers"
+
+  mysql:
+    image: mysql:5.6
+    environment:
+      MYSQL_ROOT_PASSWORD: "ThisIsNotASecurePassword123"
+      MYSQL_DATABASE: "prayers"
+    ports:
+      - 3306:3306
+    expose:
+      - 3306
