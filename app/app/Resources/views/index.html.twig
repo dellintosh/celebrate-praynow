@@ -1,13 +1,13 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
-    <h1 class="cover-heading">
+    <h1>
         Prayer Requests
     </h1>
     <p>&nbsp;</p>
     <ul class="lead">
         {% for prayer in prayers %}
-            <li>{{prayer}}</li>
+            <li class="animated fadeInUp">{{prayer}}</li>
         {% endfor %}
     </ul>
 {% endblock %}
