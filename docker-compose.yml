@@ -13,13 +13,13 @@ services:
       SYMFONY_DEBUG: 1
       SYMFONY_ENV: dev
       LOG_LEVEL: debug
-      DATABASE_DSN: "mysql://root:ThisIsNotASecurePassword123@mysql/prayers"
+      DATABASE_DSN: "mysql://root:ThisIsNotASecurePassword123@mysql/celebrate"
 
   mysql:
     image: mysql:5.6
     environment:
       MYSQL_ROOT_PASSWORD: "ThisIsNotASecurePassword123"
-      MYSQL_DATABASE: "prayers"
+      MYSQL_DATABASE: "celebrate"
     ports:
       - 3306:3306
     expose:
