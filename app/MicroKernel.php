@@ -4,7 +4,6 @@ use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Kernel;
-use Symfony\Component\Routing\RouteCollectionBuilder;
 
 class MicroKernel extends Kernel
 {
@@ -14,9 +13,9 @@ class MicroKernel extends Kernel
     {
         $bundles = array(
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
-            new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
-            new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
+            new Symfony\Bundle\MonologBundle\MonologBundle(),
+            new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new AppBundle\AppBundle(),
         );
@@ -27,16 +26,6 @@ class MicroKernel extends Kernel
         }
 
         return $bundles;
-    }
-
-    protected function configureRoutes(RouteCollectionBuilder $routes)
-    {
-        if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
-            $routes->import('@WebProfilerBundle/Resources/config/routing/wdt.xml', '/_wdt');
-            $routes->import('@WebProfilerBundle/Resources/config/routing/profiler.xml', '/_profiler');
-        }
-
-        $routes->import('@AppBundle/Controller', '/', 'annotation');
     }
 
     protected function configureContainer(ContainerBuilder $c, LoaderInterface $loader)
