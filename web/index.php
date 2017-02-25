@@ -11,7 +11,7 @@ if ($debug == true) {
     Symfony\Component\Debug\Debug::enable();
 }
 
-$app = new MicroKernel($environment, $debug);
+$app = new AppKernel($environment, $debug);
 
 $app->loadClassCache();
 
