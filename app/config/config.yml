@@ -11,7 +11,7 @@ framework:
 # Doctrine Configuration
 doctrine:
     dbal:
-        url: "%database_dsn%"
+        url: "%env(DATABASE_DSN)%"
         charset: utf8mb4
         default_table_options:
             charset: utf8mb4

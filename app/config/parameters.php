@@ -5,4 +5,3 @@
  */
 
 $container->setParameter('log_level', getenv('LOG_LEVEL'));
-$container->setParameter('database_dsn', getenv('DATABASE_DSN'));
