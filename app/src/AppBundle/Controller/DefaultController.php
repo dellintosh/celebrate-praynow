@@ -24,15 +24,6 @@ class DefaultController extends Controller
             ->getQuery();
 
         $prayers = $query->getResult();
-//         $query = $repository->createQueryBuilder('p')
-//     ->where('p.price > :price')
-//     ->setParameter('price', '19.99')
-//     ->orderBy('p.price', 'ASC')
-//     ->getQuery();
-
-// $products = $query->getResult();
-
-
         return $this->render('index.html.twig', [
             'prayers' => $prayers,
         ]);
