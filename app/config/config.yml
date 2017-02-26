@@ -39,6 +39,11 @@ twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
 
+parameters:
+    env(DATABASE_DSN): localhost
+    env(LOG_LEVEL): info
+
+
 # Doctrine Configuration
 doctrine:
     dbal:
@@ -56,7 +61,7 @@ monolog:
         nested:
             type:  stream
             path:  "php://stderr"
-            level: "%env(LOG_LEVEL)%"
+            level: "info"
 
 # Swiftmailer Configuration
 swiftmailer:
